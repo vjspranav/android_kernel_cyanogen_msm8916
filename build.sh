@@ -1,6 +1,6 @@
 #!/bin/bash
-export KBUILD_BUILD_USER="lynx06_08"
-export KBUILD_BUILD_HOST="AzurE"
+export KBUILD_BUILD_USER="macOS_sierra"
+export KBUILD_BUILD_HOST="root"
 export CROSS_COMPILE=/home/panchajanya/Kernel/Toolchains/aarch64-linux-android-7.2.1-uber/bin/aarch64-linux-android-
 export ARCH=arm64
 export SUBARCH=arm64
@@ -19,7 +19,7 @@ nocol='\033[0m'
 echo "Starting"
 make lineageos_tomato_defconfig
 echo "Making"
-make 
+make -j8
 echo "Making dt.img"
 $DTBTOOL -2 -o $KERNEL_DIR/arch/arm64/boot/dt.img -s 2048 -p $KERNEL_DIR/scripts/dtc/ $KERNEL_DIR/arch/arm/boot/dts/
 echo "Done"
