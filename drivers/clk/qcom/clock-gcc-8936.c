@@ -311,7 +311,7 @@ static void __iomem *virt_dbgbase;
 #define gpll1_out_main_source_val	1
 #define gpll2_out_main_source_val	2
 #define gpll2_out_aux_source_val	3
-#define gpll2_gfx3d_source_val		15
+#define gpll2_gfx3d_source_val		4
 #define gpll3_out_main_source_val	2
 #define gpll3_out_aux_source_val	4
 #define gpll4_out_main_source_val	2
@@ -377,29 +377,23 @@ static void __iomem *virt_dbgbase;
 	},					\
 	.num_fmax = VDD_DIG_NUM
 
-#define VDD_DIG_FMAX_MAP4(l1, f1, l2, f2, l3, f3, l4, f4, l5, f5, l6, f6, l7, f7) \
+#define VDD_DIG_FMAX_MAP4(l1, f1, l2, f2, l3, f3, l4, f4) \
 	.vdd_class = &vdd_dig, \
 	.fmax = (unsigned long[VDD_DIG_NUM]) {	\
 		[VDD_DIG_##l1] = (f1),		\
 		[VDD_DIG_##l2] = (f2),		\
 		[VDD_DIG_##l3] = (f3),		\
 		[VDD_DIG_##l4] = (f4),          \
-		[VDD_DIG_##l5] = (f5),		\
-		[VDD_DIG_##l6] = (f6),		\
-		[VDD_DIG_##l7] = (f7),		\
 	},					\
 	.num_fmax = VDD_DIG_NUM
 
 enum vdd_dig_levels {
 	VDD_DIG_NONE,
 	VDD_DIG_LOW,
-    VDD_DIG_NOMINAL_III,
-    VDD_DIG_NOMINAL_II,
-    VDD_DIG_NOMINAL_I,
 	VDD_DIG_NOMINAL,
 	VDD_DIG_NOMINAL_PLUS,
 	VDD_DIG_HIGH,
-	VDD_DIG_NUM,
+	VDD_DIG_NUM
 };
 
 static int vdd_corner[] = {
@@ -835,9 +829,9 @@ static struct rcg_clk vfe0_clk_src = {
 static struct clk_freq_tbl ftbl_gcc_oxili_gfx3d_clk[] = {
 	F(  19200000,	      gcc_xo,   1,	  0,	0),
 	F(  50000000,	   gpll0_out_main,  16,	  0,	0),
-	F(  70000000,      gpll0_out_main,  10,	  0,	0),
-	F( 120000000,      gpll0_out_main,   8,	  0,	0),
-	F( 170000000,      gpll0_out_main,   5,	  0,	0),
+	F(  80000000,      gpll0_out_main,  10,	  0,	0),
+	F( 100000000,      gpll0_out_main,   8,	  0,	0),
+	F( 160000000,      gpll0_out_main,   5,	  0,	0),
 	F( 200000000,      gpll0_out_main,   4,	  0,	0),
 	F( 220000000,      gpll3_out_main,   5,	  0,	0),
 	F( 266670000,      gpll0_out_main,   3,	  0,	0),
@@ -857,7 +851,7 @@ static struct rcg_clk gfx3d_clk_src = {
 	.c = {
 		.dbg_name = "gfx3d_clk_src",
 		.ops = &clk_ops_rcg,
-		VDD_DIG_FMAX_MAP4(LOW, 19200000, NOMINAL_III, 70000000, NOMINAL_II, 120000000, NOMINAL_I, 170000000, NOMINAL, 220000000, NOMINAL_PLUS, 400000000, HIGH,
+		VDD_DIG_FMAX_MAP4(LOW, 19200000, NOMINAL, 220000000, NOMINAL_PLUS, 400000000, HIGH,
 			550000000),
 		CLK_INIT(gfx3d_clk_src.c),
 	},
