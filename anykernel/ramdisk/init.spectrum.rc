@@ -15,297 +15,19 @@ on property:sys.boot_completed=1
 
 
    # Add kernel name
-   setprop persist.spectrum.kernel AzurE-N-MM
-
-   # Add few features
-
-# Rendering Tweaks
-   setprop debug.composition.type c2d
-   setprop debug.egl.hw 1
-   setprop debug.enabletr true
-   setprop debug.overlayui.enable 1
-   setprop debug.qctwa.preservebuf 1
-   setprop debug.performance.tuning 1
-   setprop debug.sf.hw 1
-   setprop dev.pm.dyn_samplingrate 1
-   setprop hw3d.force 1
-   setprop ro.config.disable.hw_accel false
-   setprop ro.fb.mode 1
-   setprop ro.sf.compbypass.enable 0
-   setprop ro.vold.umsdirtyratio 20
-   setprop persist.sys.composition.type c2d
-   setprop persist.sys.ui.hw 1
-   setprop video.accelerate.hw 1
-
- # Enable GPU Acceleration
-   setprop debug.sf.hw 1
-   setprop video.accelerate.hw 1
-   setprop debug.performance.tuning 1
-   setprop persist.sys.composition.type gpu
-   setprop debug.qc.hardware true
-   setprop debug.qctwa.statusbar 1
-   setprop debug.qctwa.preservebuf 1
-   setprop debug.egl.profiler 1
-   setprop debug.egl.hw 1
-   setprop debug.composition.type gpu
-   setprop hw3d.force 1
-   setprop ro.product.gpu.driver 1
-   setprop persist.sys.use_16bpp_alpha 1 
-   setprop persist.sampling_profiler 0
-   setprop hwui.render_dirty_regions false
-   setprop hwui.disable_vsync true
-
- # Saves some battery without reducing performances
-   setprop wifi.supplicant_scan_interval 497
-   setprop pm.sleep_mode 1
-   setprop power.saving.mode 1
-   setprop ro.ril.disable.power.collapse 0
-   setprop ro.vold.umsdirtyratio 20
-
- # Battery save 
-   setprop pm.sleep_mode 1 
-   setprop ro.ril.disable.power.collapse 0 
-   setprop profiler.force_disable_err_rpt 1 
-   setprop profiler.force_disable_ulog 1 
-   setprop dalvik.vm.checkjni false 
-   setprop dalvik.vm.execution-mode int:jit
-   setprop ro.ril.power_collapse 1
-   setprop power_supply.wakeup enable
-   setprop ro.mot.eri.losalert.delay 1000
-   setprop ro.config.hw_fast_dormancy 1
-   setprop ro.config.hw_power_saving 1
-
- # Misc Tweaks (enables ADB service)
-   setprop persist.service.adb.enable 1
-
- # Sensor Sleep Control
-   setprop ro.ril.sensor.sleep.control 1
-
- # Device will boot faster
-   setprop persist.sys.shutdown.mode hibernate
-   setprop ro.config.hw_fast_dormancy 1
-   setprop ro.config.hw_quickpoweron true
-
- # Reduce dial-out time
-   setprop ro.telephony.call_ring.delay 0
-
- # Allow purge of assets to free more ram
-   setprop persist.sys.purgeable_assets 1
-
- # More free ram and apps load faster
-   setprop dalvik.vm.dexopt-flags m y
-
- # More RAM 
-   setprop persist.sys.purgeable_assets 1 
-   setprop persist.service.pcsync.enable 0 
-   setprop persist.service.lgospd.enable 0
-
- # Increase general Performance
-   setprop debug.performance.tuning 1
-
- # Increase some Performance
-   setprop ro.secure 0
-   setprop persist.sys.use_16bpp_alpha 1
-   setprop ro.product.gpu.driver 1
- 
- # Reduce the black screen time of the proximity sensor
-   setprop ro.lge.proximity.delay 15
-   setprop mot.proximity.delay 15
-   setprop ro.ril.enable.amr.wideband 1
-
- # TOUCH
-   setprop touch.presure.scale 0.001
-
- # Better Scrolling responsiveness and speed
-   setprop windowsmgr.max_events_per_sec 150
-   setprop ro.max.fling_velocity 12000
-   setprop ro.min_pointer_dur 8
-
- # Smoothens UI
-   setprop persist.service.lgospd.enable 0
-   setprop persist.service.pcsync.enable 0
-   setprop ro.ril.enable.a52 1
-   setprop ro.ril.enable.a53 0
-
- # Increase camera's photo and video recording quality
-   setprop ro.media.dec.jpeg.memcap 10000000
-   setprop ro.media.enc.hprof.vid.bps 10000000
-   setprop ro.media.enc.hprof.vid.fps 60
-
- # Better Flashlight intensity and camera-flash quality
-   setprop ro.media.capture.flash led
-   setprop ro.media.capture.flashMinV 3300000
-   setprop ro.media.capture.torchIntensity 40
-   setprop ro.media.capture.flashIntensity 70
-   setprop ro.media.capture.maxres 8m
-   setprop ro.media.capture.fast.fps 4
-   setprop ro.media.capture.slow.fps 120
-   setprop ro.media.panorama.defres 3264x1840
-   setprop ro.media.panorama.frameres 1280x720
-   setprop ro.camcorder.videoModes true
-   setprop ro.media.enc.hprof.vid.fps 65
-
- # Increase the volume steps in-call
-   setprop ro.config.vc_call_steps 20
-
- # Better call voice quality.
-   setprop ro.ril.enable.amr.wideband 1
-
- # Force launcher into memory
-   setprop ro.HOME_APP_ADJ 1
-
- # Disable Bytecode Verification
-   setprop dalvik.vm.verify-bytecode false
-   setprop dalvik.vm.dexopt-flags m y,v n,o v
-   setprop dalvik.vm.dexopt-flags m y,v n,o v,u n
-
- # Improves Camera & Video Results
-   setprop ro.media.panorama.defres 3264x1840
-   setprop ro.media.panorama.frameres 1280x720
-   setprop ro.camcorder.videoModes true
-   setprop ime_extend_row_keyboard true
-   setprop ime_onehand_keyboard true
-   setprop ime_split_keyboard true
-   setprop ime_vibration_pattern 0:60
-
- # Increase jpg quality to 100%
-   setprop ro.media.enc.jpeg.quality 100
-
- # Disable Error reporting and logs
-   setprop profiler.force_disable_err_rpt 1
-   setprop profiler.force_disable_ulog 1
-
- # Disable Sending Usage Data
-   setprop ro.config.nocheckin 1
-
- # Fix some application issues (FC)
-   setprop ro.kernel.android.checkjni 0
-
- # MMS APN retry timer set to 2 sec( if SMS/MMS couldn`t be sent, it retries after 2 instead of 5 seconds)
-   setprop ro.gsm.2nd_data_retry_config max/_retries 3, 2000, 2000, 2000
-
- # Miscellaneous Tweaks for performance
-   setprop ro.config.hw_menu_unlockscreen false
-   setprop persist.sys.use_dithering 0
-   setprop persist.sys.purgeable_assets 1 
-   setprop dalvik.vm.dexopt-flags m y
-   setprop ro.mot.eri.losalert.delay 1000
-
- # Better internet browsing & download speed
-   setprop net.tcp.buffersize.default 4096,87380,256960,4096, 16384,256960
-   setprop net.tcp.buffersize.wifi 4096,87380,256960,4096,163 84,256960
-   setprop net.tcp.buffersize.umts 4096,87380,256960,4096,163 84,256960
-   setprop net.tcp.buffersize.gprs 4096,87380,256960,4096,163 84,256960
-   setprop net.tcp.buffersize.edge 4096,87380,256960,4096,163 84,256960
-   setprop net.tcp.buffersize.hspa 6144,87380,524288,6144,163 84,262144
-   setprop net.tcp.buffersize.lte 524288,1048576,2097152,5242 88,1048576,2097152
-   setprop net.tcp.buffersize.hsdpa 6144,87380,1048576,6144,8 7380,1048576
-   setprop net.tcp.buffersize.evdo_b 6144,87380,1048576,6144, 87380,1048576
-
- # Smoother video streaming and tweak media
-   setprop media.stagefright.enable-player true
-   setprop media.stagefright.enable-meta true
-   setprop media.stagefright.enable-scan true
-   setprop media.stagefright.enable-http true
-   setprop media.stagefright.enable-aac true
-   setprop media.stagefright.enable-qcp true
-   setprop media.stagefright.enable-record true
-
- # 3G signal and speed tweaks
-   setprop ro.ril.hsxpa 2
-   setprop ro.ril.gprsclass 10
-   setprop ro.ril.hep 1
-   setprop ro.ril.enable.dtm 1
-   setprop ro.ril.hsdpa.category 10
-   setprop ro.ril.enable.a53 1
-   setprop ro.ril.enable.3g.prefix 1
-   setprop ro.ril.htcmaskw1.bitmask 4294967295
-   setprop ro.ril.htcmaskw1 14449
-   setprop ro.ril.hsupa.category 7
-   setprop ro.ril.hsdpa.category 10
-   setprop ro.ril.enable.a52 1
-   setprop ro.ril.set.mtu1472 1
-   setprop persist.cust.tel.eons 1
-   setprop ro.config.hw_fast_dormancy 1
-
- # GOOGLE DNS
-   setprop net.dns1 8.8.8.8
-   setprop net.dns2 8.8.4.4
-   setprop net.rmnet0.dns1 8.8.8.8
-   setprop net.rmnet0.dns2 8.8.4.4
-   setprop net.ppp0.dns1 8.8.8.8
-   setprop net.ppp0.dns2 8.8.4.4
-   setprop net.wlan0.dns1 8.8.8.8
-   setprop net.wlan0.dns2 8.8.4.4
-   setprop net.eth0.dns1 8.8.8.8
-   setprop net.eth0.dns2 8.8.4.4
-   setprop net.gprs.dns1 8.8.8.8
-   setprop net.gprs.dns2 8.8.4.4
-
- # CRT
-   setprop persist.sys.screen_off crt
-   setprop persist.sys.screen_on none
-
- # Support For IPV4 and IPV6
-   setprop persist.telephony.support.ipv6 1
-   setprop persist.telephony.support.ipv4 1
-
- #
-   setprop ro.com.google.locationfeatures 1
-   setprop ro.com.google.networklocation 1
-   setprop htc.audio.alt.enable 0
-   setprop htc.audio.hac.enable 0
-
- # Wireless Tweaks
-   setprop net.ipv4.ip_no_pmtu_disc 0
-   setprop net.ipv4.route.flush 1
-   setprop net.ipv4.tcp_ecn 0
-   setprop net.ipv4.tcp_fack 1
-   setprop net.ipv4.tcp_mem 187000 187000 187000
-   setprop net.ipv4.tcp_moderate_rcvbuf 1
-   setprop net.ipv4.tcp_no_metrics_save 1
-   setprop net.ipv4.tcp_rfc1337 1
-   setprop net.ipv4.tcp_rmem 4096 39000 187000
-   setprop net.ipv4.tcp_sack 1
-   setprop net.ipv4.tcp_timestamps 1
-   setprop net.ipv4.tcp_window_scaling 1
-   setprop net.ipv4.tcp_wmem 4096 39000 18700
-   setprop wifi.supplicant_scan_interval 180
-
- # Video Acceleration Enabled And HW debugging
-   setprop video.accelerate.hw 1
-   setprop debug.sf.hw 1
-   setprop debug.performance.tuning 1
-   setprop debug.egl.profiler 1 
- 
- # Measure rendering time in adb shell dumpsys gfxinfo
-   setprop debug.egl.hw 1
- 
- # Disable hardware overlays and use GPU for screen compositing
-   setprop debug.composition.type gpu 
-
- # Disable logcat
-   setprop logcat.live disable
-
- # Better image quality, lower performance.
-   setprop persist.sys.use_dithering 1
-
-#Zram Mods
-   setprop persist.service.zram 0
-   setprop ro.zram.default 0
-
-
+   setprop persist.spectrum.kernel AzurE-O
 
 # Common
     write /sys/module/msm_thermal/core_control/core_control 0
     write /sys/kernel/sound_control_3/gpl_speaker_gain "8 8"
     write /proc/sys/kernel/sched_small_task 65
     write /proc/sys/kernel/sched_mostly_idle_load 25
-    write /sys/devices/system/cpu/cpu0/sched_mostly_idle_freq 960000
+    write /sys/devices/system/cpu/cpu0/sched_mostly_idle_freq 200000
     write /proc/sys/kernel/sched_mostly_idle_nr_run 4
     write /proc/sys/kernel/sched_upmigrate_min_nice 8
     write /proc/sys/kernel/sched_upmigrate 98
     write /proc/sys/kernel/sched_downmigrate 80
+    write /sys/module/adreno_idler/parameters/adreno_idler_active 1
 
     write /sys/devices/platform/kcal_ctrl.0/kcal_min 33
     write /sys/devices/platform/kcal_ctrl.0/kcal_sat 273
@@ -369,7 +91,7 @@ on property:persist.spectrum.profile=0
     #write /sys/devices/system/cpu/cpu7/online 1
     #write /sys/devices/system/cpu/cpu0/core_ctl/cctoggle 0
 
-    #write /sys/module/adreno_idler/parameters/adreno_idler_active 1
+    write /sys/module/adreno_idler/parameters/adreno_idler_active 1
     write /sys/kernel/sched/arch_power 1
     write /sys/module/state_notifier/parameters/enabled Y
 
@@ -388,7 +110,7 @@ on property:persist.spectrum.profile=0
 on property:persist.spectrum.profile=1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1612000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 302400
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 200000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 75
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 0
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 40000
