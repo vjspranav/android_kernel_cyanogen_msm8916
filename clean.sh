@@ -5,7 +5,7 @@ export ARCH=arm64
 export SUBARCH=arm64
 make clean && make mrproper
 echo "Started Cleaning Anykernel Sources for AzurE Oreo"
-rm -rf ../anykernel/dt.img
-echo "CLEAN   dt.img"
-rm -rf ../anykernel/zImage
-echo "CLEAN   zImage"
+rm -rf anykernel/dt.img
+echo "  CLEAN   dt.img"
+rm -rf anykernel/zImage
+echo "  CLEAN   zImage"
