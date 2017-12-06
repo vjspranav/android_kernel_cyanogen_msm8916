@@ -181,17 +181,6 @@ setprop persist.sys.purgeable_assets 1
 setprop dalvik.vm.dexopt-flags m y
 setprop ro.mot.eri.losalert.delay 1000
 
- # Better internet browsing & download speed
-setprop net.tcp.buffersize.default 4096,87380,256960,4096, 16384,256960
-setprop net.tcp.buffersize.wifi 4096,87380,256960,4096,163 84,256960
-setprop net.tcp.buffersize.umts 4096,87380,256960,4096,163 84,256960
-setprop net.tcp.buffersize.gprs 4096,87380,256960,4096,163 84,256960
-setprop net.tcp.buffersize.edge 4096,87380,256960,4096,163 84,256960
-setprop net.tcp.buffersize.hspa 6144,87380,524288,6144,163 84,262144
-setprop net.tcp.buffersize.lte 524288,1048576,2097152,5242 88,1048576,2097152
-setprop net.tcp.buffersize.hsdpa 6144,87380,1048576,6144,8 7380,1048576
-setprop net.tcp.buffersize.evdo_b 6144,87380,1048576,6144, 87380,1048576
-
  # Smoother video streaming and tweak media
 setprop media.stagefright.enable-player true
 setprop media.stagefright.enable-meta true
@@ -201,66 +190,15 @@ setprop media.stagefright.enable-aac true
 setprop media.stagefright.enable-qcp true
 setprop media.stagefright.enable-record true
 
- # 3G signal and speed tweaks
-setprop ro.ril.hsxpa 2
-setprop ro.ril.gprsclass 10
-setprop ro.ril.hep 1
-setprop ro.ril.enable.dtm 1
-setprop ro.ril.hsdpa.category 10
-setprop ro.ril.enable.a53 1
-setprop ro.ril.enable.3g.prefix 1
-setprop ro.ril.htcmaskw1.bitmask 4294967295
-setprop ro.ril.htcmaskw1 14449
-setprop ro.ril.hsupa.category 7
-setprop ro.ril.hsdpa.category 10
-setprop ro.ril.enable.a52 1
-setprop ro.ril.set.mtu1472 1
-setprop persist.cust.tel.eons 1
-setprop ro.config.hw_fast_dormancy 1
-
- # GOOGLE DNS
-setprop net.dns1 8.8.8.8
-setprop net.dns2 8.8.4.4
-setprop net.rmnet0.dns1 8.8.8.8
-setprop net.rmnet0.dns2 8.8.4.4
-setprop net.ppp0.dns1 8.8.8.8
-setprop net.ppp0.dns2 8.8.4.4
-setprop net.wlan0.dns1 8.8.8.8
-setprop net.wlan0.dns2 8.8.4.4
-setprop net.eth0.dns1 8.8.8.8
-setprop net.eth0.dns2 8.8.4.4
-setprop net.gprs.dns1 8.8.8.8
-setprop net.gprs.dns2 8.8.4.4
-
  # CRT
 setprop persist.sys.screen_off crt
-setprop persist.sys.screen_on none
-
- # Support For IPV4 and IPV6
-setprop persist.telephony.support.ipv6 1
-setprop persist.telephony.support.ipv4 1
+setprop persist.sys.screen_on crt
 
  #
 setprop ro.com.google.locationfeatures 1
 setprop ro.com.google.networklocation 1
 setprop htc.audio.alt.enable 0
 setprop htc.audio.hac.enable 0
-
- # Wireless Tweaks
-setprop net.ipv4.ip_no_pmtu_disc 0
-setprop net.ipv4.route.flush 1
-setprop net.ipv4.tcp_ecn 0
-setprop net.ipv4.tcp_fack 1
-setprop net.ipv4.tcp_mem 187000 187000 187000
-setprop net.ipv4.tcp_moderate_rcvbuf 1
-setprop net.ipv4.tcp_no_metrics_save 1
-setprop net.ipv4.tcp_rfc1337 1
-setprop net.ipv4.tcp_rmem 4096 39000 187000
-setprop net.ipv4.tcp_sack 1
-setprop net.ipv4.tcp_timestamps 1
-setprop net.ipv4.tcp_window_scaling 1
-setprop net.ipv4.tcp_wmem 4096 39000 18700
-setprop wifi.supplicant_scan_interval 180
 
  # Video Acceleration Enabled And HW debugging
 setprop video.accelerate.hw 1
